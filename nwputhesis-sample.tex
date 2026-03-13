@@ -1,5 +1,5 @@
 %% Copyright (C) 2022 by Shangkun Shen
-%% 
+%%
 %% It may be distributed and/or modified under the conditions of the LaTeX
 %% Project Public License, either version 1.3b of this license or (at your
 %% option) any later version. The latest version of this license is in
@@ -9,48 +9,47 @@
 
 %%=============================================================================%
 %% 设置论文格式（学位、学位类型、盲评）
-%%-----------------------------------------------------------------------------%
+%%=============================================================================%
 %% 常用选项：degree=master|phd, academic=true|false, blindreview=true|false
 \documentclass[degree=master, academic=true, blindreview=false]{nwputhesis}
 
 %%=============================================================================%
 %% 基本信息录入
-%%-----------------------------------------------------------------------------%
+%%=============================================================================%
 
 %% 封面右上角信息
-\schoolcode{10699}             % 学校代码
-\classnumber{O242}                           % 分类号
-\securitylevel{公开}                         % 密级
-\studentnumber{\blindreview{2026123456}}    % 学号
-
+\schoolcode{10699}                % 学校代码
+\classnumber{O242}                % 分类号
+\securitylevel{公开}              % 密级
+\studentnumber{\blindreview{2026123456}}  % 学号
 
 \title{基于 LaTeX 排版的 \\ 西北工业大学论文模板}{          % 中英文标题
     Yet Another Thesis Template of \\ Northwestern Polytechnical University
-}                                                           % 请自行断行
-\author{\blindreview{航小天}}{\blindreview{Xiaotian Hang}}  % 姓名（添加盲评标记）
-\date{2026年3月}{March/2026}                              % 答辩日期
+}
+\author{\blindreview{航小天}}{\blindreview{Xiaotian Hang}}  % 姓名
+\date{2026 年 3 月}{March/2026}                             % 答辩日期
 \schoolname{西北工业大学}{Northwestern Polytechnical University}
-\school{数学与统计学院}{School of Mathematics and Statistics}% 学院
-\major{数学}{Philosophy in Mathematics}                     % 专业 博士请添加 Ph
-\advisor{\blindreview{航大天}}{\blindreview{Datian Hang}}      % 导师（添加盲评标记）
-\advisorAcademicRank{~教授}{Professor}						  % 导师中英学术职位（教授 Professor、副教授 Associate Professor、研究员 Researcher 和讲师 Lecturer）
-\funding{本研究得到玄学基金（编号23336666）资助。}{         % 基金资助
-    The present work is supported by Funding of Metaphysics %
-    (Project No：23336666).}                                %
-
+\school{数学与统计学院}{School of Mathematics and Statistics}  % 学院
+\major{数学}{Philosophy in Mathematics}                        % 专业
+\advisor{\blindreview{航大天}}{\blindreview{Datian Hang}}      % 导师
+\advisorAcademicRank{~教授}{Professor}                         % 导师学术职位
+\funding{本研究得到玄学基金（编号 23336666）资助。}{
+    The present work is supported by Funding of Metaphysics
+    (Project No: 23336666).
+}                                                              % 基金资助
 
 %%=============================================================================%
 %% 文档开始
-%%-----------------------------------------------------------------------------%
+%%=============================================================================%
 \begin{document}
-%%-----------------------------------------------------------------------------%
-%% 总前言，包含封皮页、中英文标题、中英文摘要、目录
-%%-----------------------------------------------------------------------------%
-\frontmatter                                                % 前言部分
-\maketitle                                                  % 封皮页及标题页
-%%-----------------------------------------------------------------------------%
-\makeCommitteePage{                                         % 学位论文评阅人
-    \reviewers{\fullBlindReview{2}}                         % 和答辩委员会名单
+
+%% 总前言：封皮页、中英文标题、中英文摘要、目录
+\frontmatter                                                  % 前言部分
+\maketitle                                                    % 封皮页及标题页
+
+%% 学位论文评阅人和答辩委员会名单
+\makeCommitteePage{
+    \reviewers{\fullBlindReview{2}}
     \committee{20XX 年 X 月 X 日}{
         \defenseChair{XXX}{教授}{西北工业大学}
         \committeeMember{XXX}{教授}{西北工业大学}
@@ -61,36 +60,37 @@
     }
 }
 
-
-%%-----------------------------------------------------------------------------%
-\begin{abstract}                                            % 中文摘要开始
+%% 中文摘要
+\begin{abstract}
     这是在西北工业大学本科毕业设计、硕博研究生毕业论文格式的要求下的一份 LaTeX
-    文档类模板。            %
-    \begin{keywords}                                        % 中文关键词开始
-        学位论文 \sep 模板 \sep \LaTeX                      %
-    \end{keywords}                                          % 中文关键词结束
-\end{abstract}                                              % 中文摘要结束
+    文档类模板。
+    \begin{keywords}
+        学位论文 \sep 模板 \sep \LaTeX
+    \end{keywords}
+\end{abstract}
 
-%%-----------------------------------------------------------------------------%
-\begin{engabstract}                                         % 英文摘要开始
-    This is                                   %
-    \begin{engkeywords}                                     % 英文关键词开始
-        thesis \ensep template \ensep \LaTeX                %
-    \end{engkeywords}                                       % 英文关键词结束
-\end{engabstract}                                           % 英文摘要结束
-%%-----------------------------------------------------------------------------%
+%% 英文摘要
+\begin{engabstract}
+    This is
+    \begin{engkeywords}
+        thesis \ensep template \ensep \LaTeX
+    \end{engkeywords}
+\end{engabstract}
 
-\tableofcontents                                            % 目录
+\tableofcontents                                              % 目录
 
-%%-----------------------------------------------------------------------------%
+%%=============================================================================%
+%% 论文正文
+%%=============================================================================%
 \mainmatter
 \sDefault
+
 \chapter{绪论}
 \chaptermark{绪论}
 \section{这是中标题}
 \subsection{这是小标题}
 \subsubsection{这是小小标题}
-测试引用1\cite{NWPUThesisLaTeXTemplate}，引用2\cite{chen2014maiyuan,knuth1986the}，引用3\cite{MathSymbolsinLaTeXbypolossk,shen2021peridynamic,chen2018autonomous}。
+测试引用 1\cite{NWPUThesisLaTeXTemplate}，引用 2\cite{chen2014maiyuan,knuth1986the}，引用 3\cite{MathSymbolsinLaTeXbypolossk,shen2021peridynamic,chen2018autonomous}。
 
 \cleardoublepage
 
@@ -112,7 +112,6 @@
     \end{tabularx}
 \end{table}
 
-
 \section{插图}
 测试下文章内的图片引用。如\autoref{fig:example} 和\autoref{fig:example2} 所示，
 这是两幅插图。在这其中\autoref{subfig:example2-subfig1} 是第一幅子图，
@@ -121,9 +120,7 @@
 \begin{figure}[htb]
     \centering
     \includegraphics[scale=0.5]{figures/example.png}
-    \caption{
-        这里是个普通的标题
-    }
+    \caption{这里是个普通的标题}
     \label{fig:example}
 \end{figure}
 
@@ -146,17 +143,13 @@
     \label{fig:example2}
 \end{figure}
 
-
 \cleardoublepage
-
-
 
 %%=============================================================================%
 %% 参考文献以及附录
-%%-----------------------------------------------------------------------------%
-\bibliographystyle{nputhesis-noslash}                       % 参考文献                                                  % 引用所有文献
-\bibliography{ref/reference}                                    % 参考文献
-
+%%=============================================================================%
+\bibliographystyle{nputhesis-noslash}
+\bibliography{ref/reference}
 
 \appendix
 \chapter{一份说明}
@@ -172,18 +165,17 @@
 
 %%=============================================================================%
 %% 文档附页部分（致谢、参加科研情况、知识产权与原创性声明）
-%%-----------------------------------------------------------------------------%
-\backmatter                                                 % 文档附页部分
-%%-----------------------------------------------------------------------------%
-\begin{acknowledgements}                                    % 致谢开始
-    感谢我的老师和我的朋友们……
-\end{acknowledgements}                                      % 致谢结束
-%%-----------------------------------------------------------------------------%
-\begin{accomplishments}                                     % 参加科研情况开始
-    [1] ...
-\end{accomplishments}                                       % 参加科研情况结束
-%%-----------------------------------------------------------------------------%
+%%=============================================================================%
+\backmatter
 
-\makestatement                                              % 知识产权与原创性声明
+\begin{acknowledgements}
+    感谢我的老师和我的朋友们……
+\end{acknowledgements}
+
+\begin{accomplishments}
+    [1] ...
+\end{accomplishments}
+
+\makestatement                                                  % 知识产权与原创性声明
 
 \end{document}
