@@ -1,7 +1,7 @@
 TEX      = xelatex
 BIB      = bibtex
 MKI      = makeindex
-MAIN     = yanputhesis
+MAIN     = nwputhesis
 TEXARGS  = -synctex=1 -shell-escape
 
 main: close wipe clean makecls open
@@ -60,7 +60,7 @@ close:
 	@$(CLOSE) || echo not found
 
 clean:
-	$(RM) *.gls *.glo *.ind yanputhesis.idx
+	$(RM) *.gls *.glo *.ind nwputhesis.idx
 	$(RM) *.ilg *.aux *.toc *.aux
 	$(RM) *.hd *.out *.thm *.gz *.nlo *.nls
 	$(RM) *.log *.lof *.lot *.bbl *.blg

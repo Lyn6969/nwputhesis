@@ -1,10 +1,10 @@
 %%
-%% This is file `yanputhesis.cls',
+%% This is file `nwputhesis.cls',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% yanputhesis.dtx  (with options: `class')
+%% nwputhesis.dtx  (with options: `class')
 %% Copyright (C) 2022 by Shangkun Shen
 %% 
 %% It may be distributed and/or modified under the conditions of the LaTeX
@@ -14,7 +14,7 @@
 %% and version 1.3b or later is part of all distributions of LaTeX version
 %% 2005/12/01 or later.
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{yanputhesis}
+\ProvidesClass{nwputhesis}
     [2023/03/07 v1.8.5 Yet Another NPU Thesis Template]
 %%=============================================================================%
 %% 文档选项和基础文档类型控制
@@ -945,10 +945,10 @@
 
 
 %% 
-%% This work consists of the file  yanputhesis.dtx
-%% and the derived files           yanputhesis.ins,
-%%                                 yanputhesis.pdf,
-%%                                 yanputhesis.cls.
+%% This work consists of the file  nwputhesis.dtx
+%% and the derived files           nwputhesis.ins,
+%%                                 nwputhesis.pdf,
+%%                                 nwputhesis.cls.
 %% 
 %%
-%% End of file `yanputhesis.cls'.
+%% End of file `nwputhesis.cls'.

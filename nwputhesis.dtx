@@ -41,25 +41,25 @@ and version 1.3b or later is part of all distributions of LaTeX version
 \endpreamble
 \postamble
 
-This work consists of the file  yanputhesis.dtx
-and the derived files           yanputhesis.ins,
-                                yanputhesis.pdf,
-                                yanputhesis.cls.
+This work consists of the file  nwputhesis.dtx
+and the derived files           nwputhesis.ins,
+                                nwputhesis.pdf,
+                                nwputhesis.cls.
 
 \endpostamble
 
 \generate
 {
-  \usedir{tex/latex/yanputhesis}
-  \file{yanputhesis.cls}             {\from{\jobname.dtx}{class}}
+  \usedir{tex/latex/nwputhesis}
+  \file{nwputhesis.cls}             {\from{\jobname.dtx}{class}}
 %</install>
 %<*internal>
-  \usedir{source/latex/yanputhesis}
+  \usedir{source/latex/nwputhesis}
   \file{\jobname.ins}              {\from{\jobname.dtx}{install}}
 %</internal>
 %<*install>
-   \usedir{doc/latex/yanputhesis}
-   \file{yanputhesis-sample.tex}      {\from{\jobname.dtx}{sample}}
+   \usedir{doc/latex/nwputhesis}
+   \file{nwputhesis-sample.tex}      {\from{\jobname.dtx}{sample}}
 }
 
 \Msg{*************************************************************}
@@ -67,7 +67,7 @@ and the derived files           yanputhesis.ins,
 \Msg{* To finish the installation you have to move the following *}
 \Msg{* files into a directory searched by TeX:                   *}
 \Msg{*                                                           *}
-\Msg{* \space\space yanputhesis.cls                              *}
+\Msg{* \space\space nwputhesis.cls                              *}
 \Msg{*                                                           *}
 \Msg{* To produce the documentation run the files ending with    *}
 \Msg{* `.dtx' through XeLaTeX.                                   *}
@@ -85,10 +85,10 @@ and the derived files           yanputhesis.ins,
 \fi
 %</internal>
 %<*driver>
-\ProvidesFile{yanputhesis.dtx}
+\ProvidesFile{nwputhesis.dtx}
 %</driver>
 %<class>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
-%<class>\ProvidesClass{yanputhesis}
+%<class>\ProvidesClass{nwputhesis}
 %<*class>
     [2023/03/07 v1.8.5 Yet Another NPU Thesis Template]
 %</class>
@@ -100,7 +100,7 @@ and the derived files           yanputhesis.ins,
 \RecordChanges
 \newcommand{\markdtxchanges}[3]{{\scriptsize{\qquad\%{#1}({#2})：{#3}}}\changes{#1}{#2}{#3}}
 \begin{document}
-    \DocInput{yanputhesis.dtx}
+    \DocInput{nwputhesis.dtx}
     \IndexLayout
     \PrintChanges
     \PrintIndex
@@ -118,14 +118,14 @@ and the derived files           yanputhesis.ins,
 % \changes{v1.1.0}{2016/06/06}{ 格式细节修正，适配 2016 年本科毕业设计论文}
 % \changes{v1.0.0}{2016/05/18}{ 初始版本，仅用于本科毕业论文}
 %
-% \GetFileInfo{yanputhesis.dtx}
+% \GetFileInfo{nwputhesis.dtx}
 %
 % \DoNotIndex{\newcommand, \newenvironment, \renewcommand}
 % \DoNotIndex{\\, \RequirePackage, \else, \fi, \begin, \end}
 %
 %^^A---------------------------------------------------------------------------%
-% \title{The \textsf{yanputhesis} class\thanks{This document
-%   corresponds to \textsf{yanputhesis}~\fileversion, dated \filedate.}}
+% \title{The \textsf{nwputhesis} class\thanks{This document
+%   corresponds to \textsf{nwputhesis}~\fileversion, dated \filedate.}}
 % \author{NWPU Metaphysics Office \\
 %   \texttt{\href{https://github.com/NWPUMetaphysicsOffice}{https://github.com/NWPUMetaphysicsOffice}}}
 %
@@ -145,7 +145,7 @@ and the derived files           yanputhesis.ins,
 % 并在此基础上之上修改而成，格式参照于 2022 年西北工业大学研究生院编写的西北工业
 % 大学博士研究生学位论文编写规则（试用版）。
 %
-% 项目名称 yanputhesis 是 Yet Another NPU Thesis 的缩写，即另一个西北工业大学毕
+% 项目名称 nwputhesis 是 Yet Another NPU Thesis 的缩写，即另一个西北工业大学毕
 % 业设计论文模板。
 %
 % 本模板的实现参考了目前仍在维护的模板，同时也有众多使用者给出了很多建议与帮助。
@@ -173,15 +173,15 @@ and the derived files           yanputhesis.ins,
 %% 设置论文格式（学位、学位类型、盲评、Adobe 字体）
 %%-----------------------------------------------------------------------------%
 %% 博士、学术学位、正常版本、不使用 Adobe 字体
-%% \documentclass[lang=chs, degree=phd, blindreview=false, adobe=false, academic=true]{yanputhesis}
+%% \documentclass[lang=chs, degree=phd, blindreview=false, adobe=false, academic=true]{nwputhesis}
 %% 博士、专业学位、盲评版本、不使用 Adobe 字体
-%% \documentclass[lang=chs, degree=phd, blindreview=true, adobe=false, academic=false]{yanputhesis}
+%% \documentclass[lang=chs, degree=phd, blindreview=true, adobe=false, academic=false]{nwputhesis}
 %% 博士、学术学位、正常版本、强制使用 Windows 系统字体
-\documentclass[lang=chs, degree=phd, blindreview=false, winfonts=true, academic=true]{yanputhesis}
+\documentclass[lang=chs, degree=phd, blindreview=false, winfonts=true, academic=true]{nwputhesis}
 %% 硕士、学术学位、正常版本、不使用 Adobe 字体
-%% \documentclass[lang=chs, degree=master, blindreview=false, adobe=false, academic=true]{yanputhesis}
+%% \documentclass[lang=chs, degree=master, blindreview=false, adobe=false, academic=true]{nwputhesis}
 %% 硕士、专业学位、盲评版本、不使用 Adobe 字体
-%% \documentclass[lang=chs, degree=master, blindreview=true, adobe=false, academic=false]{yanputhesis}
+%% \documentclass[lang=chs, degree=master, blindreview=true, adobe=false, academic=false]{nwputhesis}
 %%=============================================================================%
 %% 导言区：请自行添加额外宏包
 %%-----------------------------------------------------------------------------%
@@ -403,7 +403,7 @@ $$a_0+a_1+a_2=\sqrt{233}$$
 \begin{enumerate}
     \setlength{\itemsep}{0pt}
     \item 安装正确版本的 TexLive 2021
-    \item 使用自带的 TeXworks 打开 \lstinline`yanputhesis-sample.tex`
+    \item 使用自带的 TeXworks 打开 \lstinline`nwputhesis-sample.tex`
     \item 左上角下拉框选择工具
     \item 依次使用 \lstinline`XeLaTeX-BibTeX-XeLaTeX-XeLaTeX` 编译
 \end{enumerate}
