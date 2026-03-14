@@ -35,5 +35,5 @@
             ]
         }
     ],
-    "latex-workshop.latex.recipe.default": "xelatex (fast)"
+    "latex-workshop.latex.recipe.default": "xelatex + bibtex + xelatex x 2"
 }
