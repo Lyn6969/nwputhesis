@@ -792,10 +792,11 @@
     \fSong \sSihao \vspace{0.3\baselineskip}                %
     \let\oldarraystretch=\arraystretch                      %
     \renewcommand{\arraystretch}{2.10}                      %
-    \begin{tabularx}{15.27cm}{O{3.71cm}O{2.83cm}O{8.73cm}}  %
-        \expert{\textbf{姓名}}{\textbf{职称}}{\textbf{工作单位}}
+    \setlength{\tabcolsep}{2pt}                             %
+    \begin{tabular}{O{3.71cm}O{2.83cm}O{8.73cm}}  %
+        \sDefault \expert{\textbf{姓名}}{\textbf{职称}}{\textbf{工作单位}}
         #1\relax                                            %
-    \end{tabularx}                                          %
+    \end{tabular}                                          %
     \renewcommand{\arraystretch}{\oldarraystretch}}         %
 %%-----------------------------------------------------------------------------%
 \newcommand{\committee}[2]{                                 %
@@ -805,11 +806,12 @@
     \fSong \sSihao \vspace{0.3\baselineskip}                %
     \let\oldarraystretch=\arraystretch                      %
     \renewcommand{\arraystretch}{2.10}                      %
-    \begin{tabularx}{15.44cm}{O{3.76cm}O{2.68cm}O{2.25cm}O{6.75cm}}
+    \setlength{\tabcolsep}{2pt}                             %
+    \begin{tabular}{O{3.76cm}O{2.68cm}O{2.25cm}O{6.75cm}}
         \defenseDate{#1} \sDefault\textbf{答辩委员会} & %   %
         \expert{\textbf{姓名}}{\textbf{职称}}{\textbf{工作单位}}
         #2\relax                                            %
-    \end{tabularx}                                          %
+    \end{tabular}                                          %
     \renewcommand{\arraystretch}{\oldarraystretch}}         %
 %%=============================================================================%
 %%=============================================================================%
