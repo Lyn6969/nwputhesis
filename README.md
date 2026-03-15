@@ -75,8 +75,3 @@
 Copyright (c) 2016-2022 NWPU Metaphysics Office https://github.com/NWPUMetaphysicsOffice
 
 Modified (c) 2026 by Jiayi Yan
-
-你可以自由使用、修改和分发本模板，但必须：
-- 保留原作者和修改者的版权声明
-- 以相同许可证（GPL v3）发布衍生作品
-- 说明你对本模板所做的修改
