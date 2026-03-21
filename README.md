@@ -49,7 +49,7 @@
 在 `main.tex` 文件中，通过 `\documentclass` 的选项来设置论文格式：
 
 ```latex
-\documentclass[degree=master, academic=true, blindreview=false colorcover=true]{nwputhesis}
+\documentclass[degree=master, academic=true, blindreview=false, colorcover=true]{nwputhesis}
 ```
 
 各选项说明：
