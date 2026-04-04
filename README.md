@@ -5,7 +5,7 @@
 
 > 模板升级时，用户通常不需要改动已填写好的 `data` 、`figures` 和 `ref` 内容，只需要替换其他文件即可，如有特殊情况会在 Releases 页面说明。
 
-本模板已成功通过学校的论文最终版提交（26届硕士），是截至目前（26年3月）已知所有西北工业大学硕博学位论文 LaTeX 模板中最新最完善的，现已添加本科毕业设计论文支持。
+本模板已成功通过学校的论文最终版提交（26届硕士），是截至目前（26年4月）已知所有西北工业大学硕博学位论文 LaTeX 模板中最新最完善的，现已添加本科毕业设计论文支持。（本模板并非学校官方提供模板）
 
 本模板格式符合 2025 年西北工业大学研究生院编写的 [西北工业大学研究生学位论文写作指南](https://gs.nwpu.edu.cn/info/2283/30467.htm) ，修复了先前 [Yet-Another-LaTeX-Template-for-NPU-Thesis](https://github.com/NWPUMetaphysicsOffice/Yet-Another-LaTeX-Template-for-NPU-Thesis) 中的多处格式问题。
 
@@ -15,9 +15,6 @@
 - [NwpuThesis](#nwputhesis)
   - [目录](#目录)
   - [使用说明](#使用说明)
-    - [环境说明](#环境说明)
-      - [本地运行（推荐）](#本地运行推荐)
-      - [在线运行](#在线运行)
     - [编译方式](#编译方式)
     - [论文格式设置](#论文格式设置)
     - [文件修改说明](#文件修改说明)
@@ -28,17 +25,8 @@
   - [许可证](#许可证)
 
 ## 使用说明
-
-### 环境说明
-
-#### 本地运行（推荐）
-- 推荐直接下载 [最新 Release 版本](https://github.com/1195343015/nwputhesis/releases/latest) 使用，非 Windows 系统用户需要从仓库中自行下载 Windows 字体。
+- 推荐直接下载 [最新 Release 版本](https://github.com/1195343015/nwputhesis/releases/latest) 使用，非 Windows 系统用户需要从仓库中自行下载 Windows 字体。（不推荐 clone/fork 使用，因为仓库里有很多用于测试的文件，整体体积较大）
 - 支持各种操作系统，推荐在 TeX Live 最新版本下搭配 VS Code 中的 LaTeX Workshop 插件使用。
-
-#### 在线运行
-推荐使用 [TeXPage 模板](https://www.texpage.com/zh/template/1b72a41e-0d62-430e-8678-d697d89bdb7e/) 在线编辑。（不推荐使用 Overleaf，其免费版基本没法用）
-
-TexPage 模板可能会比 Release 版本滞后，若发现 TexPage 模板不是最新的，可自行下载最新的 Release 版本上传到 TexPage 模板中。并且发现 TexPage 网站有时不稳定，因此还是更推荐本地运行。
 
 ### 编译方式
 提供了两种编译方式（如下图所示）：
@@ -93,11 +81,9 @@ TexPage 模板可能会比 Release 版本滞后，若发现 TexPage 模板不是
 [清华大学 thuthesis 提供的新手指南](https://github.com/tuna/thuthesis/wiki/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97)（对本项目同样适用）
 
 ## 推荐项目
-
 [awesome-ai-research-writing](https://github.com/Leey21/awesome-ai-research-writing)
 
 ## 许可证
-
 本项目的硕博格式基于 [Yet-Another-LaTeX-Template-for-NPU-Thesis](https://github.com/NWPUMetaphysicsOffice/Yet-Another-LaTeX-Template-for-NPU-Thesis) 修改，本科生论文格式设计部分参考了 [LaTeX-Template-For-NPU-Thesis](https://github.com/polossk/LaTeX-Template-For-NPU-Thesis) 、 [LaTeX-NewTemplate-For-NPU-undergraduate-Thesis](https://github.com/jialinlvcn/LaTeX-NewTemplate-For-NPU-undergraduate-Thesis) 和 [NWPU-Thesis-Template](https://github.com/lihanshu/NWPU-Thesis-Template) ，项目整体实现设计还参考了 [thuthesis](https://github.com/tuna/thuthesis) 。
 
 本项目采用 [GNU General Public License v3.0](LICENSE) 许可证发布。
