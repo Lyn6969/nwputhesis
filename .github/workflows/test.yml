@@ -51,7 +51,6 @@ jobs:
           cache_version: ${{ env.TEXLIVE_CACHE_VERSION }}
 
       - name: Dump TeX environment
-        shell: bash
         run: |
           tlmgr --version
           xelatex --version
@@ -88,7 +87,6 @@ jobs:
           cache_version: ${{ env.TEXLIVE_CACHE_VERSION }}
 
       - name: Dump TeX environment
-        shell: bash
         run: |
           tlmgr --version
           xelatex --version
