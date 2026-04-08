@@ -26,7 +26,7 @@ env:
     algorithmicx algorithms appendix bookmark booktabs caption catchfile
     enumitem etoolbox fancyhdr fancyref float geometry ifplatform koma-script
     makecell multirow nomencl ntheorem pdfpages pgf ragged2e setspace
-    silence titlesec type1cm xcolor xkeyval xstring
+    silence titlesec type1cm wrapfig xcolor xkeyval xstring
   FONT_PKGS: fandol tex-gyre dejavu
 
 jobs:
