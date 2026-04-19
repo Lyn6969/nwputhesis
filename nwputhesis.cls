@@ -1402,7 +1402,111 @@
     \nwpu_patent_number_allowbreaks:n {#1}
   }
 \ExplSyntaxOff
+\DeclareFieldFormat[patent]{title}{#1}
 \DeclareFieldFormat[patent]{number}{\nwpuPatentNumberAllowBreaks{#1}}
+\DeclareBibliographyDriver{patent}{%
+    \usebibmacro{bibindex}%
+    \usebibmacro{begentry}%
+    \usebibmacro{author/translator+others}%
+    \ifnameundef{author}{}{\setunit{\labelnamepunct}\newblock}%
+    \printfield[titlecase]{title}%
+    \printtext{[P]}%
+    \newunit\newblock%
+    \printlist{location}%
+    \iffieldundef{number}{}{%
+        \setunit{\addcolon\addspace}%
+        \printfield{number}%
+    }%
+    \ifboolexpr{
+        not test {\iffieldundef{year}}
+        or
+        not test {\iffieldundef{month}}
+        or
+        not test {\iffieldundef{day}}
+    }{%
+        \setunit{\addcomma\addspace}%
+        \usebibmacro{newsdate}%
+    }{}%
+    \usebibmacro{finentry}%
+}
+\ifbachelor{%
+    \DeclareStyleSourcemap{
+        \maps[datatype=bibtex]{
+            \map[overwrite]{
+                \pertype{conference}
+                \step[fieldset=usera, fieldvalue={A}]
+            }
+            \map[overwrite]{
+                \pertype{inproceedings}
+                \step[fieldset=usera, fieldvalue={A}]
+            }
+        }
+    }
+    \DeclareDriverSourcemap[datatype=bibtex]{
+        \map{
+            \step[typesource=conference, typetarget=nwpubachelorconf]
+        }
+        \map{
+            \step[typesource=inproceedings, typetarget=nwpubachelorconf]
+        }
+    }
+    \DeclareFieldFormat[nwpubachelorconf]{title}{#1}
+    \DeclareFieldFormat[nwpubachelorconf]{booktitle}{#1}
+    \newbibmacro*{nwpu:bachelorbooktitle}{%
+        \ifboolexpr{
+            test {\iffieldundef{booktitle}}
+            and
+            test {\iffieldundef{booksubtitle}}
+        }
+            {}
+            {\printtext[booktitle]{\bibtitlefont%
+                \printfield[booktitlecase]{booktitle}%
+                \iffieldundef{booksubtitle}{}{\setunit{\subtitlepunct}\printfield[booktitlecase]{booksubtitle}}%
+                \printtext{[C]}%
+            }}%
+    }
+    \newbibmacro*{nwpu:bachelorin}{%
+        \setunit{\adddot\addspace}%
+        \iffieldequalstr{userd}{chinese}
+            {\printtext{\bibstring{incn}}}
+            {\printtext{\bibstring{in}}}%
+    }
+    \DeclareBibliographyDriver{nwpubachelorconf}{%
+        \usebibmacro{bibindex}%
+        \usebibmacro{begentry}%
+        \usebibmacro{author/translator+others}%
+        \ifnameundef{author}{}{\setunit{\labelnamepunct}\newblock}%
+        \usebibmacro{title}%
+        \usebibmacro{nwpu:bachelorin}%
+        \usebibmacro{bybookauthor}%
+        \ifnameundef{bookauthor}{%
+            \ifnameundef{editor}{}{\newunit}%
+        }{\newunit}%
+        \iffieldundef{series}{}{\usebibmacro{series+number}\setunit{\addcolon\addspace}}%
+        \usebibmacro{nwpu:bachelorbooktitle}%
+        \iffieldundef{volume}{}{\setunit{\addcolon\addspace}\printfield{volume}}%
+        \iffieldundef{number}{}{\setunit{\addcolon\addspace}\printfield{number}}%
+        \newunit\newblock%
+        \printfield{edition}%
+        \newunit\newblock%
+        \usebibmacro{publisher+location+date}%
+        \usebibmacro{chapter+pages}%
+        \usebibmacro{doi+eprint+url}%
+        \newunit\newblock%
+        \iftoggle{bbx:isbn}
+            {\printfield{isbn}}
+            {}%
+        \newunit\newblock%
+        \usebibmacro{addendum+pubstate}%
+        \setunit{\bibpagerefpunct}\newblock%
+        \usebibmacro{pageref}%
+        \newunit\newblock%
+        \iftoggle{bbx:related}
+            {\usebibmacro{related:init}\usebibmacro{related}}
+            {}%
+        \usebibmacro{annotation}\usebibmacro{finentry}%
+    }
+}{}
 \newcommand{\nwpu@bibitemcmd}{%
     \addvspace{\bibitemsep}%
     \leavevmode%
