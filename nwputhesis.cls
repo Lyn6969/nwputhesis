@@ -1404,13 +1404,39 @@
 \ExplSyntaxOff
 \DeclareFieldFormat[patent]{title}{#1}
 \DeclareFieldFormat[patent]{number}{\nwpuPatentNumberAllowBreaks{#1}}
+\renewbibmacro*{title}{%
+\ifboolexpr{%
+    test{\iffieldundef{title}}%
+    and
+    test{\iffieldundef{subtitle}}}%
+    {}%
+    {\printtext[title]{\bibtitlefont%
+       \iffieldequalstr{entrysubtype}{standard}{%
+            \iffieldundef{number}{}{\printtext{\thefield{number}}\setunit{\addcomma\space}}%
+       }{}%
+       \printfield[titlecase]{title}%
+       \ifboolexpr{test {\iffieldundef{subtitle}}}%
+            {}{\setunit{\subtitlepunct}\printfield[titlecase]{subtitle}}%
+       \iffieldundef{titleaddon}{}{\setunit{\subtitlepunct}\printfield{titleaddon}}%
+       \ifboolexpr{test{\ifentrytype{book}} and (not test{\iffieldundef{volume}})}%
+            {\setunit{\subtitlepunct}\printfield{volume}}{}%
+       \ifboolexpr{(test{\ifentrytype{archive}} or  test{\ifentrytype{online}}) and (not test{\iffieldundef{number}})}%
+            {\setunit{\subtitlepunct}\printfield{number}}{}%
+       \iftoggle{bbx:gbtype}%
+            {\iffieldundef{entrysubtype}{\printfield[gbtypeflag]{usera}}%
+            {\iffieldequalstr{entrysubtype}{standard}{\printfield[gbtypeflags]{usera}}%
+                  {\iffieldequalstr{entrysubtype}{news}{\printfield[gbtypeflagn]{usera}}%
+                  {\printfield[gbtypeflag]{usera}}}}}{}%
+       }%
+    }%
+}
 \DeclareBibliographyDriver{patent}{%
     \usebibmacro{bibindex}%
     \usebibmacro{begentry}%
     \usebibmacro{author/translator+others}%
     \ifnameundef{author}{}{\setunit{\labelnamepunct}\newblock}%
-    \printfield[titlecase]{title}%
-    \printtext{[P]}%
+    \printtext[title]{\bibtitlefont\printfield[titlecase]{title}}%
+    \mbox{[P]}%
     \newunit\newblock%
     \printlist{location}%
     \iffieldundef{number}{}{%
@@ -1429,6 +1455,100 @@
     }{}%
     \usebibmacro{finentry}%
 }
+\newbibmacro*{nwpu:miscfullinstitution+location+date}{%
+  \bibpubfont%
+  \iflistundef{institution}
+    {}
+    {\printlist{institution}\setunit*{\adddot\space}}%
+  {\printlist{location}%
+   \iflistundef{location}
+     {}
+     {\iflistundef{institution}
+        {\setunit*{\adddot\space}}
+        {\setunit*{\addcolon\space}}}%
+   \ifboolexpr{
+        not test {\iffieldundef{year}}
+        or
+        not test {\iffieldundef{month}}
+        or
+        not test {\iffieldundef{day}}
+   }
+     {\usebibmacro{newsdate}}
+     {}}}
+\DeclareBibliographyDriver{misc}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \ifnameundef{namea}{}{\setunit{\labelnamepunct}\newblock}%
+  \usebibmacro{title}%
+  \iftoggle{bbx:gbstrict}{}{%
+    \newunit
+    \printlist{language}%
+    \newunit\newblock
+    \usebibmacro{byauthor}%
+    \newunit\newblock
+    \usebibmacro{byeditor+others}}%
+  \newunit\newblock
+  \printfield{howpublished}%
+  \newunit\newblock
+  \printfield{type}%
+  \newunit
+  \printfield{version}%
+  \newunit
+  \printfield{note}%
+  \newunit\newblock
+  \usebibmacro{nwpu:miscfullinstitution+location+date}%
+  \usebibmacro{chapter+pages}%
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}\usebibmacro{related}}
+    {}%
+  \usebibmacro{annotation}\usebibmacro{finentry}}
+\DeclareBibliographyDriver{other}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \ifnameundef{namea}{}{\setunit{\labelnamepunct}\newblock}%
+  \usebibmacro{title}%
+  \iftoggle{bbx:gbstrict}{}{%
+    \newunit
+    \printlist{language}%
+    \newunit\newblock
+    \usebibmacro{byauthor}%
+    \newunit\newblock
+    \usebibmacro{byeditor+others}}%
+  \newunit\newblock
+  \printfield{howpublished}%
+  \newunit\newblock
+  \printfield{type}%
+  \newunit
+  \printfield{version}%
+  \newunit
+  \printfield{note}%
+  \newunit\newblock
+  \ifboolexpr{
+      not test {\iffieldundef{year}}
+      or
+      not test {\iffieldundef{month}}
+      or
+      not test {\iffieldundef{day}}
+  }{\usebibmacro{newsdate}}{}%
+  \usebibmacro{chapter+pages}%
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \newunit\newblock
+  \iftoggle{bbx:related}
+    {\usebibmacro{related:init}\usebibmacro{related}}
+    {}%
+  \usebibmacro{annotation}\usebibmacro{finentry}}
 \ifbachelor{%
     \DeclareStyleSourcemap{
         \maps[datatype=bibtex]{
