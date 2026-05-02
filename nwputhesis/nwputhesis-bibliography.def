@@ -196,19 +196,28 @@
     \DeclareFieldFormat[nwpubachelorconf]{title}{#1}
     \DeclareFieldFormat[nwpubachelorconf]{booktitle}{#1}
     \DeclareFieldFormat[nwpubachelorconf]{volume}{#1}
-    \newbibmacro*{nwpu:bachelorbooktitle}{%
-    \ifboolexpr{
-        test {\iffieldundef{booktitle}}
-        and
-        test {\iffieldundef{booksubtitle}}
+    \newbibmacro*{nwpu:bachelorconfvolume}{%
+        \iffieldundef{volume}
+            {}
+            {%
+                \iffieldequalstr{userd}{chinese}
+                    {：第~\printfield{volume}~卷}
+                    {\addcolon\space vol.\space\printfield{volume}}%
+            }%
     }
-        {}
-        {\printtext[booktitle]{\bibtitlefont%
-            \printfield[booktitlecase]{booktitle}%
-            \iffieldundef{booksubtitle}{}{\setunit{\subtitlepunct}\printfield[booktitlecase]{booksubtitle}}%
-            \iffieldundef{volume}{}{\setunit{\addspace}\printfield{volume}}%
-            \printtext{[C]}%
-        }}%
+    \newbibmacro*{nwpu:bachelorbooktitle}{%
+        \ifboolexpr{
+            test {\iffieldundef{booktitle}}
+            and
+            test {\iffieldundef{booksubtitle}}
+        }
+            {}
+            {\printtext[booktitle]{\bibtitlefont%
+                \printfield[booktitlecase]{booktitle}%
+                \iffieldundef{booksubtitle}{}{\setunit{\subtitlepunct}\printfield[booktitlecase]{booksubtitle}}%
+                \usebibmacro{nwpu:bachelorconfvolume}%
+                \printtext{[C]}%
+            }}%
     }
     \newbibmacro*{nwpu:bachelorin}{%
         \setunit{\adddot\addspace}%
