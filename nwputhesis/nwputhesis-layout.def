@@ -50,7 +50,7 @@
     \titleformat{\subsection}[hang]{\nwpuSubsectionFont}%
       {\nwpuSubsectionFont\thesubsection}{\nwpuSectionLabelSep}{}{}
     \titleformat{\subsubsection}[hang]{\nwpuSubsubsectionFont}%
-      {(\arabic{subsubsection})}{\nwpuSectionLabelSep}{}{}
+      {（\arabic{subsubsection}）}{0pt}{}{}
     \titlespacing{\chapter}{0pt}{\nwpuChapterBeforeSkip}{\nwpuChapterAfterSkip}
     \titlespacing{\section}{0pt}{\nwpuSectionBeforeSkip}{\nwpuSectionAfterSkip}
     \titlespacing{\subsection}{0pt}{\nwpuSubsecBeforeSkip}{\nwpuSubsecAfterSkip}

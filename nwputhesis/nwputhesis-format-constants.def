@@ -58,7 +58,7 @@
     \cs_new_protected:Npn \nwpuChapterFont { \sffamily\fHei\fontsize{\nwpuFontPointSanhao}{\nwpuBachelorLineHeight}\selectfont }
     \cs_new_protected:Npn \nwpuSectionFont { \sffamily\fHei\fontsize{\nwpuFontPointSihao}{\nwpuBachelorLineHeight}\selectfont }
     \cs_new_protected:Npn \nwpuSubsectionFont { \sffamily\fHei\fontsize{\nwpuFontPointXiaosi}{\nwpuBachelorLineHeight}\selectfont }
-    \cs_new_protected:Npn \nwpuSubsubsectionFont { \sffamily\fHei\fontsize{\nwpuFontPointXiaosi}{\nwpuBachelorLineHeight}\selectfont }
+    \cs_new_protected:Npn \nwpuSubsubsectionFont { \fSong\fontsize{\nwpuFontPointXiaosi}{\nwpuBachelorLineHeight}\selectfont }
   }
   {
     \cs_new_protected:Npn \nwpuChapterFont { \sffamily\fHei\fontsize{\nwpuFontPointSanhao}{\nwpuGraduateLineHeight}\selectfont }
