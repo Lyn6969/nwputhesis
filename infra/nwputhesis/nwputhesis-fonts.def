@@ -22,7 +22,7 @@
   }
 \cs_new_protected:Npn \npu@set@local@fonts
   {
-    \typeout{[nwputhesis]~Using~local~fonts~from~fonts/~directory.}
+    \typeout{[nwputhesis]~Using~local~fonts~from~infra/fonts/~directory.}
     \cs_set:Npn \defaultSog {SimSun}
     \cs_set:Npn \defaultHei {SimHei}
     \cs_set:Npn \defaultEngFont {Times~New~Roman}
@@ -115,14 +115,14 @@
   {
     \nwpu_if_local_fonts:TF
       {
-        \setCJKmainfont[Path=fonts/, AutoFakeBold]{simsun.ttc}
-        \setCJKsansfont[Path=fonts/, AutoFakeBold]{simhei.ttf}
-        \setCJKfamilyfont{song}[Path=fonts/, AutoFakeBold]{simsun.ttc}
-        \setCJKfamilyfont{hei}[Path=fonts/, AutoFakeBold]{simhei.ttf}
-        \setCJKfamilyfont{eng}[Path=fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
+        \setCJKmainfont[Path=infra/fonts/, AutoFakeBold]{simsun.ttc}
+        \setCJKsansfont[Path=infra/fonts/, AutoFakeBold]{simhei.ttf}
+        \setCJKfamilyfont{song}[Path=infra/fonts/, AutoFakeBold]{simsun.ttc}
+        \setCJKfamilyfont{hei}[Path=infra/fonts/, AutoFakeBold]{simhei.ttf}
+        \setCJKfamilyfont{eng}[Path=infra/fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
         \cs_new_protected:Npn \fEng {\CJKfamily{eng}}
-        \setsansfont[Path=fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
-        \setmainfont[Path=fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
+        \setsansfont[Path=infra/fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
+        \setmainfont[Path=infra/fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
       }
       {
         \setCJKmainfont[AutoFakeBold]{\defaultSog}

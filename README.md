@@ -33,7 +33,7 @@
 - **Recipe: xelatex (fast)**：快速编译，在不修改参考文献时使用
 - 推荐平常使用第二种方式即可，只在添加参考文献时使用第一种方式
 
-![[编译方式]](nwputhesis/assets/example.png)
+![[编译方式]](infra/nwputhesis/assets/example.png)
 
 ### 论文格式设置
 推荐直接编译对应的入口文件：

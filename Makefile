@@ -63,15 +63,15 @@ ifeq ($(target),)
 	@bash -c '\
 		EXIT_CODE=0; \
 		echo "Running all test groups..."; \
-		$(L3BUILD) check --config testfiles/config-committee $(TEST_COMMITTEE) || EXIT_CODE=1; \
-		$(L3BUILD) check --config testfiles/config-accomplishments $(TEST_ACCOMPLISHMENTS) || EXIT_CODE=1; \
-		$(L3BUILD) check --config testfiles/config-acknowledgements $(TEST_ACK) || EXIT_CODE=1; \
-		$(L3BUILD) check --config testfiles/config-abstract $(TEST_ABSTRACT) || EXIT_CODE=1; \
-		$(L3BUILD) check --config testfiles/config-title-page $(TEST_TITLE_PAGE) || EXIT_CODE=1; \
-		$(L3BUILD) check --config testfiles/config-toc $(TEST_TOC) || EXIT_CODE=1; \
-		$(L3BUILD) check --config testfiles/config-biber $(TEST_BIBER) || EXIT_CODE=1; \
-		$(L3BUILD) check --config testfiles/config-designsummary $(TEST_DESIGNSUMMARY) || EXIT_CODE=1; \
-		$(L3BUILD) check --config testfiles/config-appendix $(TEST_APPENDIX) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-committee $(TEST_COMMITTEE) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-accomplishments $(TEST_ACCOMPLISHMENTS) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-acknowledgements $(TEST_ACK) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-abstract $(TEST_ABSTRACT) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-title-page $(TEST_TITLE_PAGE) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-toc $(TEST_TOC) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-biber $(TEST_BIBER) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-designsummary $(TEST_DESIGNSUMMARY) || EXIT_CODE=1; \
+		$(L3BUILD) check --config infra/testfiles/config-appendix $(TEST_APPENDIX) || EXIT_CODE=1; \
 		echo ""; \
 		if [ $$EXIT_CODE -ne 0 ]; then \
 			echo "TEST SUMMARY: at least one test group failed."; \
@@ -81,5 +81,5 @@ ifeq ($(target),)
 		exit 0; \
 	'
 else
-	bash testfiles/test.sh $(target)
+	bash infra/testfiles/test.sh $(target)
 endif

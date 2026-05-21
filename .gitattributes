@@ -31,15 +31,12 @@ Makefile text eol=lf
 .gitignore export-ignore
 .gitattributes export-ignore
 .gitmodules export-ignore
-fonts/ export-ignore
 
-# Docs
-docs/ export-ignore
+# Infra (template internals, not for end users)
+infra/ export-ignore
 
 # Build outputs and helper files
 build/ export-ignore
-testfiles/ export-ignore
-tools/ export-ignore
 *.aux export-ignore
 *.bbl export-ignore
 *.blg export-ignore

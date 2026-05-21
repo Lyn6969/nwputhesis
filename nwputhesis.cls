@@ -1,16 +1,16 @@
 \NeedsTeXFormat{LaTeX2e}[2022/06/01]
 \ProvidesClass{nwputhesis}
 [2026/03/25 v2.3.0 nwputhesis]
-\input{nwputhesis/nwputhesis-options.def}
+\input{infra/nwputhesis/nwputhesis-options.def}
 \RequirePackage{fix-cm}                                    % 允许 CM 数学字体连续缩放
 \LoadClass[a4paper]{book}                                   % openright 默认：硕博双面从奇数页起排
 \ExplSyntaxOn
 \nwpu_if_bachelor:T { \@twosidefalse \@mparswitchfalse }    % 本科强制单面印刷
 \ExplSyntaxOff
-\input{nwputhesis/nwputhesis-format-constants.def}
-\input{nwputhesis/nwputhesis-core.def}
-\input{nwputhesis/nwputhesis-fonts.def}
-\input{nwputhesis/nwputhesis-layout.def}
+\input{infra/nwputhesis/nwputhesis-format-constants.def}
+\input{infra/nwputhesis/nwputhesis-core.def}
+\input{infra/nwputhesis/nwputhesis-fonts.def}
+\input{infra/nwputhesis/nwputhesis-layout.def}
 %%-----------------------------------------------------------------------------%
 %% hyperref 应尽可能靠后加载，但需早于使用其命令的 localization.def
 %%-----------------------------------------------------------------------------%
@@ -35,13 +35,13 @@
 \def\quad{ }%
 \def\qquad{  }%
 }
-\input{nwputhesis/nwputhesis-localization.def}
-\input{nwputhesis/nwputhesis-metadata.def}
-\input{nwputhesis/nwputhesis-title.def}
-\input{nwputhesis/nwputhesis-abstract.def}
-\input{nwputhesis/nwputhesis-bibliography.def}
-\input{nwputhesis/nwputhesis-appendix.def}
-\input{nwputhesis/nwputhesis-backmatter.def}
+\input{infra/nwputhesis/nwputhesis-localization.def}
+\input{infra/nwputhesis/nwputhesis-metadata.def}
+\input{infra/nwputhesis/nwputhesis-title.def}
+\input{infra/nwputhesis/nwputhesis-abstract.def}
+\input{infra/nwputhesis/nwputhesis-bibliography.def}
+\input{infra/nwputhesis/nwputhesis-appendix.def}
+\input{infra/nwputhesis/nwputhesis-backmatter.def}
 \ExplSyntaxOn
 \bool_set_true:N \l__nwpu_class_loaded_bool
 \ExplSyntaxOff

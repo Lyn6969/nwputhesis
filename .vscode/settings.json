@@ -15,7 +15,7 @@
             "name": "biber",
             "command": "texlua",
             "args": [
-                "./tools/run-biber-if-needed.lua",
+                "./infra/tools/run-biber-if-needed.lua",
                 "%DOCFILE%"
             ]
         }

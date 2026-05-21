@@ -1,7 +1,7 @@
-testfiledir = "testfiles/02-abstract"
+testfiledir = "infra/testfiles/03-committee"
 
 includetests = {"*"}
 excludetests = {}
 
-supportdir = "testfiles/support"
+supportdir = "infra/testfiles/support"
 checksuppfiles = {"*.tex", "*.bib", "*.cls", "nwputhesis/*.def", "figures/*", "*.ttf"}

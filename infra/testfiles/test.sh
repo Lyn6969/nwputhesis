@@ -10,14 +10,14 @@ fi
 test_name="$1";
 test_file="$1.tex";
 
-file_path="testfiles/$test_file";
-support_dir="testfiles/support";
+file_path="infra/testfiles/$test_file";
+support_dir="infra/testfiles/support";
 
 if [ -f "$file_path" ]; then
     echo "Running test: $file_path";
     l3build check --file "$file_path";
 else
-    for test_dir in testfiles/*; do
+    for test_dir in infra/testfiles/*; do
         if [ -d "$test_dir" ]; then
             file_path="$test_dir/$test_file";
             if [ -f "$file_path" ]; then

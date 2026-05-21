@@ -1,9 +1,9 @@
-testfiledir = "testfiles/07-bibliography"
+testfiledir = "infra/testfiles/07-bibliography"
 
 includetests = {"*"}
 excludetests = {}
 
-supportdir = "testfiles/support"
+supportdir = "infra/testfiles/support"
 checksuppfiles = {"*.tex", "*.bib", "*.cls", "nwputhesis/*.def", "figures/*", "*.ttf"}
 
 checkruns = 3

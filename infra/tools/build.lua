@@ -4,15 +4,15 @@
 
 module = "nwputhesis"
 
-supportdir = "./testfiles/support"
-checksuppfiles = {"*.tex", "*.bib", "*.cls", "nwputhesis/*.def", "figures/*", "*.ttf"}
+supportdir = "./infra/testfiles/support"
+checksuppfiles = {"*.tex", "*.bib", "*.cls", "infra/nwputhesis/*.def", "figures/*", "*.ttf"}
 
-installfiles = {"*.cls", "nwputhesis/*.def"}
-sourcefiles = {"*.cls", "nwputhesis/*.def"}
+installfiles = {"*.cls", "infra/nwputhesis/*.def"}
+sourcefiles = {"*.cls", "infra/nwputhesis/*.def"}
 
 function checkinit_hook()
-  mkdir(testdir .. "/nwputhesis")
-  cp("nwputhesis-*.def", unpackdir, testdir .. "/nwputhesis")
+  mkdir(testdir .. "/infra/nwputhesis")
+  cp("infra/nwputhesis/nwputhesis-*.def", unpackdir, testdir .. "/infra/nwputhesis")
   return 0
 end
 
@@ -29,15 +29,15 @@ specialformats.latex.xetex = {
 -- 标题页测试在子目录中，需要单独配置
 checkconfigs = {
   "build",
-  "testfiles/config-committee",
-  "testfiles/config-accomplishments",
-  "testfiles/config-acknowledgements",
-  "testfiles/config-abstract",
-  "testfiles/config-title-page",
-  "testfiles/config-toc",
-  "testfiles/config-biber",
-  "testfiles/config-designsummary",
-  "testfiles/config-appendix",
+  "infra/testfiles/config-committee",
+  "infra/testfiles/config-accomplishments",
+  "infra/testfiles/config-acknowledgements",
+  "infra/testfiles/config-abstract",
+  "infra/testfiles/config-title-page",
+  "infra/testfiles/config-toc",
+  "infra/testfiles/config-biber",
+  "infra/testfiles/config-designsummary",
+  "infra/testfiles/config-appendix",
 }
 
 -- 排除标题页测试（它们在子目录中单独运行）
