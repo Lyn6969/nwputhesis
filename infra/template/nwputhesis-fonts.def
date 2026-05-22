@@ -141,7 +141,7 @@
         \setCJKfamilyfont{hei}[Path=infra/fonts/, AutoFakeBold]{simhei.ttf}
         \setCJKfamilyfont{eng}[Path=infra/fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
         \cs_new_protected:Npn \fEng {\CJKfamily{eng}}
-        \setsansfont[Path=infra/fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
+        \setsansfont[Path=infra/fonts/, AutoFakeBold]{simhei.ttf}
         \setmainfont[Path=infra/fonts/, BoldFont=timesbd.ttf, ItalicFont=timesi.ttf, BoldItalicFont=timesbi.ttf]{times.ttf}
       }
       {
