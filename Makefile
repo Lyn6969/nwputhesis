@@ -17,26 +17,16 @@ LATEXMK = latexmk
 L3BUILD = l3build
 SHELL   := /usr/bin/env bash
 
-# 跨平台删除命令
-ifdef SystemRoot
-	RM = del /Q
-else
-	RM = rm -f
-endif
-
 .PHONY: all doc thesis clean cleanall distclean view viewthesis test wordcount
 
 # 默认目标：构建示例论文
 all: thesis
 
-# 构建示例论文
-thesis: $(SAMPLE).pdf
+# 构建示例论文（编译配置见 .latexmkrc）
+thesis: build/$(SAMPLE).pdf
 
-$(SAMPLE).pdf:
-	$(LATEXMK) -xelatex $(SAMPLE)
-
-# 构建文档（如果有 dtx 文件）
-doc: $(PACKAGE).pdf
+build/$(SAMPLE).pdf:
+	$(LATEXMK) $(SAMPLE)
 
 # 查看生成的 PDF
 view: viewthesis
@@ -47,11 +37,7 @@ viewthesis: thesis
 # 清理辅助文件
 clean:
 	$(LATEXMK) -C $(SAMPLE)
-	-@$(RM) -f *.gls *.glo *.ind *.idx *.ilg *.nlo *.nls 2>/dev/null || true
-
-# 清理所有生成文件
-cleanall: clean
-	-@$(RM) -f $(SAMPLE).pdf $(PACKAGE).pdf 2>/dev/null || true
+	-rm -rf build
 
 # 字数统计
 wordcount: thesis

@@ -67,15 +67,15 @@ jobs:
       - name: Build document
         run: |
           make
-          latexmk -xelatex bachelor
+          latexmk bachelor
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v6
         with:
           name: nwputhesis-pdf-tl${{ matrix.texlive_version }}
           path: |
-            graduate.pdf
-            bachelor.pdf
+            build/graduate.pdf
+            build/bachelor.pdf
           retention-days: 30
 
   test-ubuntu:
@@ -131,4 +131,4 @@ jobs:
       - name: Build document
         run: |
           make
-          latexmk -xelatex bachelor
+          latexmk bachelor

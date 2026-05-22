@@ -1,22 +1,19 @@
 {
     "latex-workshop.latex.tools": [
         {
-            "name": "xelatex",
-            "command": "xelatex",
+            "name": "latexmk",
+            "command": "latexmk",
             "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-shell-escape",
                 "%DOC%"
             ]
         },
         {
-            "name": "biber",
-            "command": "texlua",
+            "name": "latexmk-fast",
+            "command": "latexmk",
             "args": [
-                "./infra/tools/run-biber-if-needed.lua",
-                "%DOCFILE%"
+                "-e",
+                "$bibtex_use=0",
+                "%DOC%"
             ]
         }
     ],
@@ -24,16 +21,13 @@
         {
             "name": "xelatex + biber + xelatex x 2",
             "tools": [
-                "xelatex",
-                "biber",
-                "xelatex",
-                "xelatex"
+                "latexmk"
             ]
         },
         {
             "name": "xelatex (fast)",
             "tools": [
-                "xelatex"
+                "latexmk-fast"
             ]
         }
     ],
