@@ -205,9 +205,9 @@
 \DeclareCaptionFont{nwpuSubcaption}{\nwpuCaptionSize}
 \nwpu_if_bachelor:TF
 {
-    \setlength{\textfloatsep}{\nwpuTextFloatSep}              %
-    \setlength{\floatsep}{\nwpuFloatSep}                      %
-    \setlength{\intextsep}{\nwpuInTextSep}                    %
+    \setlength{\textfloatsep}{\nwpuFloatSep}           %
+    \setlength{\floatsep}{\nwpuFloatSep}                   %
+    \setlength{\intextsep}{\nwpuFloatSep}                  %
     \DeclareCaptionLabelFormat{nwpubcllabel}{#1\kern0.1em#2}
     \DeclareCaptionLabelSeparator{nwpubclsep}{\hspace{0.5em}}
     \DeclareCaptionLabelSeparator{nwpubclfigsep}{\hspace{1em}}
@@ -215,26 +215,27 @@
         font=nwpuTableCaption,
         labelformat=nwpubcllabel,
         labelsep=nwpubclsep,
-        aboveskip=\nwpuBachelorCaptionAboveSkip,
-        belowskip=\nwpuBachelorCaptionBelowSkip}
+        aboveskip=\nwpuBachelorTableCaptionAboveSkip,
+        belowskip=\nwpuBachelorTableCaptionBelowSkip}
     \captionsetup[figure]{%
         font=nwpuFigureCaption,
         labelformat=nwpubcllabel,
         labelsep=nwpubclfigsep,
-        aboveskip=\nwpuBachelorCaptionAboveSkip,
-        belowskip=\nwpuBachelorCaptionBelowSkip}
+        aboveskip=\nwpuBachelorFigureCaptionAboveSkip,
+        belowskip=\nwpuBachelorFigureCaptionBelowSkip}
     \captionsetup[algorithm]{%
         font=nwpuTableCaption,
         labelformat=nwpubcllabel,
         labelsep=nwpubclsep,
-        aboveskip=\nwpuBachelorCaptionAboveSkip,
-        belowskip=\nwpuBachelorCaptionBelowSkip}
+        aboveskip=\nwpuBachelorTableCaptionAboveSkip,
+        belowskip=\nwpuBachelorTableCaptionBelowSkip}
     \captionsetup[subfigure]{labelformat=simple, font=nwpuSubcaption, aboveskip=\nwpuBachelorSubcaptionAboveSkip, belowskip=\nwpuBachelorSubcaptionBelowSkip}
+    \AddToHook{env/figure/begin}{\vspace{\nwpuBachelorFigureTopSkip}}
 }
 {
-    \setlength{\textfloatsep}{\nwpuTextFloatSep}              %
-    \setlength{\floatsep}{\nwpuFloatSep}                      %
-    \setlength{\intextsep}{\nwpuInTextSep}                    %
+    \setlength{\textfloatsep}{\nwpuFloatSep}           %
+    \setlength{\floatsep}{\nwpuFloatSep}                   %
+    \setlength{\intextsep}{\nwpuFloatSep}                  %
     \captionsetup[table]{font=nwpuTableCaption, aboveskip=\nwpuCaptionAboveSkip, belowskip=\nwpuCaptionBelowSkip}
     \captionsetup[figure]{font=nwpuFigureCaption, aboveskip=\nwpuCaptionAboveSkip, belowskip=\nwpuCaptionBelowSkip}
     \captionsetup[subfigure]{%

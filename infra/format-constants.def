@@ -153,13 +153,9 @@
 
 %%=== 浮动体间距 =========================================================
 \nwpu_if_bachelor:TF {
-  \cs_new:Npn \nwpuFloatSep     { 15pt }                    % 本科浮动体之间距离
-  \cs_new:Npn \nwpuTextFloatSep { 15pt }                    % 本科浮动体与正文距离
-  \cs_new:Npn \nwpuInTextSep    { 15pt }                    % 本科文中浮动体上下距离
+  \cs_new:Npn \nwpuFloatSep       { 18pt }                  % 本科浮动体间距
 } {
-  \cs_new:Npn \nwpuFloatSep     { 8pt }                     % 研究生浮动体之间距离
-  \cs_new:Npn \nwpuTextFloatSep { 8pt }                     % 研究生浮动体与正文距离
-  \cs_new:Npn \nwpuInTextSep    { 8pt }                     % 研究生文中浮动体上下距离
+  \cs_new:Npn \nwpuFloatSep       { 8pt }                   % 研究生浮动体间距
 }
 
 %%=== 表格线宽 ===========================================================
@@ -305,8 +301,11 @@
 \cs_new:Npn \nwpuBachelorHeaderRuleWidth { 0.8pt }          % 本科页眉线宽度
 \cs_new:Npn \nwpuBachelorHeaderLogoScale { 0.15 }           % 本科页眉校徽缩放比例
 \cs_new:Npn \nwpuHeaderRaise { 0.5pt }                      % 研究生页眉文字垂直抬升
-\cs_new:Npn \nwpuBachelorCaptionAboveSkip { 2pt }           % 本科图表标题上方间距
-\cs_new:Npn \nwpuBachelorCaptionBelowSkip { 0pt }            % 本科图表标题下方间距
+\cs_new:Npn \nwpuBachelorTableCaptionAboveSkip { 2pt }      % 本科表标题上方间距
+\cs_new:Npn \nwpuBachelorTableCaptionBelowSkip { 2pt }     % 本科表标题下方间距
+\cs_new:Npn \nwpuBachelorFigureTopSkip { 9pt }              % 本科图内容上方补偿间距
+\cs_new:Npn \nwpuBachelorFigureCaptionAboveSkip { 2pt }     % 本科图标题上方间距
+\cs_new:Npn \nwpuBachelorFigureCaptionBelowSkip { -9pt }    % 本科图标题下方间距
 \cs_new:Npn \nwpuCaptionAboveSkip { 5pt }                   % 研究生图表标题上方间距
 \cs_new:Npn \nwpuCaptionBelowSkip { 0pt }                   % 研究生图表标题下方间距
 \cs_new:Npn \nwpuSubcaptionBelowSkip { -5pt }               % 子图/子表标题下方间距
