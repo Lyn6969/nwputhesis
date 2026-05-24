@@ -45,8 +45,6 @@ Fork 仓库后 Clone 到本地获取模板。字体自动检测，Windows 用户
 
 硕博提交最终版时，可将签字版声明扫描为 PDF 替换 [研究生学位论文使用授权声明.pdf](content/figures/研究生学位论文使用授权声明.pdf)。
 
-参考文献格式有问题时，尝试执行 `tlmgr update biblatex-gb7714-2015`。
-
 ## QQ交流群
 
 <img src="content/figures/QQ交流群.png" width="200">
